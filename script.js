@@ -1,0 +1,1 @@
+// Add event listeners to navigation links const navLinks = document.querySelectorAll('header nav a'); navLinks.forEach((link) => { link.addEventListener('click', (e) => { e.preventDefault(); const target = e.target.getAttribute('href'); const section = document.querySelector(target); section.scrollIntoView({ behavior: 'smooth' }); }); });

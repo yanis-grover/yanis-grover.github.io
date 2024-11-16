@@ -1,130 +1,180 @@
 
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang='en'>
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Yanis MIRAOUI | Portfolio</title>
-    <link rel='stylesheet' href='style.css'>
+    <title>Yanis MIRAOUI</title>
+    <link rel='stylesheet' href='styles.css'>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class='nav-links'>
-                <a href='#summary'>Summary</a>
-                <a href='#experience'>Experience</a>
-                <a href='#skills'>Skills</a>
-                <a href='#education'>Education</a>
-                <a href='#projects'>Projects</a>
-                <a href='#awards'>Awards</a>
-                <a href='#publications'>Publications</a>
-                <a href='#languages'>Languages</a>
-            </div>
+    <header class='header'>
+        <nav class='nav'>
+            <ul>
+                <li><a href='#summary'>Summary</a></li>
+                <li><a href='#experience'>Experience</a></li>
+                <li><a href='#skills'>Skills</a></li>
+                <li><a href='#education'>Education</a></li>
+                <li><a href='#projects'>Projects</a></li>
+                <li><a href='#awards'>Awards</a></li>
+                <li><a href='#publications'>Publications</a></li>
+            </ul>
         </nav>
     </header>
-    <main>
+    <main class='main'>
+        <!-- Summary Section -->
         <section id='summary' class='summary'>
             <h1>Professional Summary</h1>
-            <p>Highly motivated and detail-oriented Research Data Scientist with a strong background in machine learning, data science, and statistics.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            <button class='cv-button'>Learn More</button>
         </section>
+        <!-- Experience Section -->
         <section id='experience' class='experience'>
             <h1>Experience</h1>
-            <div class='experience-grid'>
-                <div class='experience-card'>
+            <div class='experience-container'>
+                <!-- Experience Item 1 -->
+                <div class='experience-item'>
                     <h2>Research Data Scientist Intern</h2>
-                    <p>Oracle (September 2024 - Present)</p>
+                    <p>Oracle</p>
+                    <p>September 2024 - Present</p>
                     <ul>
-                        <li>Designed, implemented, and evaluated fully integrated LLM Agents at Oracle Labs, improving workflow automation for data scientists.</li>
-                        <li>Collaborated with cross-functional teams to identify optimization opportunities, leveraging LLMs to improve agent accuracy.</li>
+                        <li>Designed, implemented, and evaluated fully integrated LLM Agents at Oracle Labs, improving workflow automation for data scientists</li>
+                        <li>Collaborated with cross-functional teams to identify optimization opportunities, leveraging LLMs to improve agent accuracy</li>
                     </ul>
                 </div>
-                <div class='experience-card'>
+                <!-- Experience Item 2 -->
+                <div class='experience-item'>
                     <h2>Research Assistant</h2>
-                    <p>Stanford Computational Neuroscience Laboratory (CNS Lab) (September 2023 – Present)</p>
+                    <p>Stanford Computational Neuroscience Laboratory (CNS Lab)</p>
+                    <p>September 2023 – Present</p>
                     <ul>
-                        <li>Built state-of-the-art Graph Neural Network models to measure neural fMRI connectivity of different brain parcels.</li>
-                        <li>Developed an optimal parcellation method of brain regions reducing computational complexity and processing time for a wide range of downstream tasks by 70%.</li>
-                        <li>Published and presented research findings on GNN models for neural connectivity at the MICCAI 2024 conference.</li>
+                        <li>Built state-of-the-art Graph Neural Network models to measure neural fMRI connectivity of different brain parcels</li>
+                        <li>Developed an optimal parcellation method of brain regions reducing computational complexity and processing time for a wide range of downstream tasks by 70%</li>
+                        <li>Published and presented research findings on GNN models for neural connectivity at the MICCAI 2024 conference</li>
                     </ul>
                 </div>
-                <!-- Add more experience cards here -->
+                <!-- Experience Item 3 -->
+                <div class='experience-item'>
+                    <h2>Applied Research Data Scientist Intern</h2>
+                    <p>Snowflake</p>
+                    <p>June 2024 - August 2024</p>
+                    <ul>
+                        <li>Developed a RAG chatbot enhancing sales team efficiency by integrating knowledge from PDFs and web pages</li>
+                        <li>Built a multilingual translation tool leveraging LLMs to improve translation quality and reducing content translation time and cost</li>
+                        <li>Led the creation of a forecasting model accurately predicting Sales Qualified Opportunities (SQOs) with less than 12% error rate</li>
+                    </ul>
+                </div>
+                <!-- Experience Item 4 -->
+                <div class='experience-item'>
+                    <h2>Course Assistant</h2>
+                    <p>Stanford University</p>
+                    <p>September 2023 – August 2024</p>
+                    <ul>
+                        <li>Led engaging weekly discussion sections, answered questions, and provided guidance on course content</li>
+                        <li>Lectured classes on advanced techniques for applying optimization in Machine Learning and Data Science</li>
+                        <li>Designed and graded assignments and exams, as well as mentored students’ final projects</li>
+                    </ul>
+                </div>
+                <!-- Experience Item 5 -->
+                <div class='experience-item'>
+                    <h2>AI Researcher Intern</h2>
+                    <p>Egoli Media</p>
+                    <p>August 2021 - September 2021</p>
+                    <ul>
+                        <li>Created a machine learning face recognition application using OpenCV and Dlib that can accurately identify athletes regardless of the way their faces are posed or if they are wearing eyeglasses or sunglasses</li>
+                        <li>Built NLP models using Transformers and sentiment analysis to classify sports commentaries and extract insights of sports events — achieved generalization accuracy of 82% on data from diverse sources</li>
+                    </ul>
+                </div>
+                <!-- Experience Item 6 -->
+                <div class='experience-item'>
+                    <h2>Machine Learning Engineer Intern</h2>
+                    <p>Sopra Steria Group</p>
+                    <p>June 2021 - August 2021</p>
+                    <ul>
+                        <li>Led an entire machine learning project from conception to implementation for customer service for a French telecom company</li>
+                        <li>Developed a full machine learning CI/CD pipeline leveraging BERT to reduce the resolution time of support tickets by +60%</li>
+                    </ul>
+                </div>
             </div>
         </section>
+        <!-- Skills Section -->
         <section id='skills' class='skills'>
-            <h1>Skills & Expertise</h1>
-            <div class='skills-grid'>
-                <div class='skill-card'>
-                    <p>Python</p>
-                </div>
-                <div class='skill-card'>
-                    <p>R</p>
-                </div>
-                <div class='skill-card'>
-                    <p>C</p>
-                </div>
-                <!-- Add more skill cards here -->
-            </div>
+            <h1>Skills</h1>
+            <ul>
+                <li>Python</li>
+                <li>R</li>
+                <li>C</li>
+                <li>SQL</li>
+                <li>NodeJS</li>
+                <li>Git</li>
+                <li>Google Cloud Platform</li>
+                <li>AWS</li>
+                <li>Microsoft Azure</li>
+                <li>Snowflake</li>
+                <li>LaTeX</li>
+                <li>Microsoft Office</li>
+                <li>G Suite</li>
+            </ul>
         </section>
+        <!-- Education Section -->
         <section id='education' class='education'>
             <h1>Education</h1>
-            <div class='education-grid'>
-                <div class='education-card'>
+            <div class='education-container'>
+                <!-- Education Item 1 -->
+                <div class='education-item'>
                     <h2>MS Statistics & Data Science</h2>
-                    <p>Stanford University (September 2023 - June 2025)</p>
+                    <p>Stanford University</p>
+                    <p>September 2023 - June 2025</p>
                 </div>
-                <div class='education-card'>
+                <!-- Education Item 2 -->
+                <div class='education-item'>
                     <h2>MSci Mathematics</h2>
-                    <p>Imperial College London & ETH Zürich (October 2019 - June 2023)</p>
+                    <p>Imperial College London & ETH Zürich</p>
+                    <p>October 2019 - June 2023</p>
                 </div>
             </div>
         </section>
+        <!-- Projects Section -->
         <section id='projects' class='projects'>
             <h1>Personal Projects</h1>
-            <div class='projects-grid'>
-                <div class='project!card'>
+            <div class='projects-container'>
+                <!-- Projects Item 1 -->
+                <div class='projects-item'>
                     <h2>NFT Market Analysis and Trading</h2>
+                    <p>Developed an automated trading app on GCP that utilizes machine learning algorithms to predict NFT market trends, generating over $2,200 in monthly revenue.</p>
                     <p>January 2022 - Present</p>
-                    <ul>
-                        <li>Developed an automated trading app on GCP that utilizes machine learning algorithms to predict NFT market trends, generating over $2,200 in monthly revenue.</li>
-                        <li>Created a dashboard using Dash and Heroku to visualize and summarize results as well as to optimize portfolio management.</li>
-                    </ul>
                 </div>
-                <!-- Add more project cards here -->
+                <!-- Projects Item 2 -->
+                <div class='projects-item'>
+                    <h2>Sports Fantasy Prediction and Optimization</h2>
+                    <p>Gathered and engineered multiple datasets to build a Boosting model predicting the performance of athletes in the next game. Built an algorithm implementing Linear Optimization to assemble fantasy sports teams, to earn +$3,000 in Daily Fantasy Contests.</p>
+                    <p>January 2021 – December 2023</p>
+                </div>
             </div>
         </section>
+        <!-- Awards Section -->
         <section id='awards' class='awards'>
-            <h1>Awards and Honors</h1>
-            <div class='awards-grid'>
-                <div class='award-card'>
+            <h1>Awards</h1>
+            <div class='awards-container'>
+                <!-- Awards Item 1 -->
+                <div class='awards-item'>
                     <h2>CODE4GREEN Hackathon</h2>
+                    <p>Developed a machine learning application using Python that can detect with satellite imagery the pollution routes and cycles over rivers and seas to allow NGOs to better understand and target risk areas. Awarded €3,000 for developing a machine learning application detecting pollution routes in water bodies using satellite imagery.</p>
                     <p>July 2020</p>
-                    <p>Developed a machine learning application using Python that can detect with satellite imagery the pollution routes and cycles over rivers and seas to allow NGOs to better understand and target risk areas.</p>
-                    <p>€3,000</p>
                 </div>
             </div>
         </section>
+        <!-- Publications Section -->
         <section id='publications' class='publications'>
             <h1>Publications</h1>
-            <div class='publications-grid'>
-                <div class='publication-card'>
+            <div class='publications-container'>
+                <!-- Publications Item 1 -->
+                <div class='publications-item'>
                     <h2>GNN models for neural connectivity</h2>
+                    <p>Published and presented research findings on GNN models for neural connectivity at the MICCAI 2024 conference.</p>
                     <p>MICCAI 2024 conference</p>
                 </div>
-            </div>
-        </section>
-        <section id='languages' class='languages'>
-            <h1>Languages</h1>
-            <div class='languages-grid'>
-                <div class='language-card'>
-                    <p>French (Native)</p>
-                </div>
-                <div class='language-card'>
-                    <p>Moroccan (Fluent)</p>
-                </div>
-                <div class='language-card'>
-                    <p>English (Fluent)</p>
-                </div>
-                <!-- Add more language cards here -->
             </div>
         </section>
     </main>

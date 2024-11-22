@@ -1,0 +1,103 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #cccccc;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Navigation Styles */
+
+nav {
+  margin-bottom: 40px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  font-size: 18px;
+}
+
+/* Main Content Styles */
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Contact Links Styles */
+
+#get-in-touch ul {
+  padding: 0;
+}
+
+#get-in-touch li {
+  margin-bottom: 10px;
+}
+
+#get-in-touch a {
+  font-size: 18px;
+}
+
+/* Particles Styles */
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

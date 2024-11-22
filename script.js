@@ -1,152 +1,170 @@
+// Initialize particles.js with an elegant dark theme
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('particles.json loaded');
+});
+
+// Set up particles.json
+// You can create your own particles.json or use the one provided below
+
+// particles.json
+/*
+{
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+}
+*/
+
+// Use GSAP for animations
+function animateContent() {
+  const about = document.getElementById('about');
+  const education = document.getElementById('education');
+  const skills = document.getElementById('skills');
+  const technicalExperience = document.getElementById('technical-experience');
+  const teachingExperience = document.getElementById('teaching-experience');
+  const getInTouch = document.getElementById('get-in-touch');
+
+  if (about && education && skills && technicalExperience && teachingExperience && getInTouch) {
+    gsap.timeline({
+      defaults: {
+        duration: 1,
+        ease: 'power2.inOut',
+        y: 20
+      }
+    })
+    .to(about, {
+      y: 0,
+      opacity: 1
+    })
+    .to(education, {
+      y: 0,
+      opacity: 1
+    }, '+=0.5')
+    .to(skills, {
+      y: 0,
+      opacity: 1
+    }, '+=0.5')
+    .to(technicalExperience, {
+      y: 0,
+      opacity: 1
+    }, '+=0.5')
+    .to(teachingExperience, {
+      y: 0,
+      opacity: 1
+    }, '+=0.5')
+    .to(getInTouch, {
+      y: 0,
+      opacity: 1
+    }, '+=0.5');
+  } else {
+    console.warn('Missing elements for animation');
+  }
+}
+
 // Initialize after DOM content loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Particles Background
-    particlesJS.load('particles-js', 'particles.json', function() {
-        console.log('particles.js loaded - callback');
-    });
-
-    // Create particles.json file with the following content if it doesn't exist
-    // {
-    //   "particles": {
-    //     "number": {
-    //       "value": 80,
-    //       "density": {
-    //         "enable": true,
-    //         "value_area": 800
-    //       }
-    //     },
-    //     "color": {
-    //       "value": "#ffffff"
-    //     },
-    //     "shape": {
-    //       "type": "circle",
-    //       "stroke": {
-    //         "width": 0,
-    //         "color": "#000000"
-    //       },
-    //       "polygon": {
-    //         "nb_sides": 5
-    //       },
-    //       "image": {
-    //         "src": "img/github.svg",
-    //         "width": 100,
-    //         "height": 100
-    //       }
-    //     },
-    //     "opacity": {
-    //       "value": 0.5,
-    //       "random": false,
-    //       "anim": {
-    //         "enable": false,
-    //         "speed": 1,
-    //         "opacity_min": 0.1,
-    //         "sync": false
-    //       }
-    //     },
-    //     "size": {
-    //       "value": 3,
-    //       "random": true,
-    //       "anim": {
-    //         "enable": false,
-    //         "speed": 40,
-    //         "size_min": 0.1,
-    //         "sync": false
-    //       }
-    //     },
-    //     "line_linked": {
-    //       "enable": true,
-    //       "distance": 150,
-    //       "color": "#ffffff",
-    //       "opacity": 0.4,
-    //       "width": 1
-    //     },
-    //     "move": {
-    //       "enable": true,
-    //       "speed": 6,
-    //       "direction": "none",
-    //       "random": false,
-    //       "straight": false,
-    //       "out_mode": "out",
-    //       "bounce": false,
-    //       "attract": {
-    //         "enable": false,
-    //         "rotateX": 600,
-    //         "rotateY": 1200
-    //       }
-    //     }
-    //   },
-    //   "interactivity": {
-    //     "detect_on": "canvas",
-    //     "events": {
-    //       "onhover": {
-    //         "enable": true,
-    //         "mode": "repulse"
-    //       },
-    //       "onclick": {
-    //         "enable": true,
-    //         "mode": "push"
-    //       },
-    //       "resize": true
-    //     },
-    //     "modes": {
-    //       "grab": {
-    //         "distance": 400,
-    //         "line_linked": {
-    //           "opacity": 1
-    //         }
-    //       },
-    //       "bubble": {
-    //         "distance": 400,
-    //         "size": 40,
-    //         "duration": 2,
-    //         "opacity": 8,
-    //         "speed": 3
-    //       },
-    //       "repulse": {
-    //         "distance": 200,
-    //         "duration": 0.4
-    //       },
-    //       "push": {
-    //         "particles_nb": 4
-    //       },
-    //       "remove": {
-    //         "particles_nb": 2
-    //       }
-    //     }
-    //   },
-    //   "retina_detect": true
-    // }
-
-    // Text Animations
-    const contentElements = document.querySelectorAll('main section, nav ul');
-    if (contentElements.length === 0) {
-        console.warn('No main content elements found');
-        return;
-    }
-
-    contentElements.forEach((element, index) => {
-        gsap.from(element, {
-            duration: 1,
-            opacity: 0,
-            y: 20,
-            ease: 'power2.out',
-            delay: index * 0.5,
-        });
-    });
-
-    const aboutTextElements = document.querySelectorAll('#about p, #about h1');
-    if (aboutTextElements.length === 0) {
-        console.warn('No about text elements found');
-        return;
-    }
-
-    aboutTextElements.forEach((element, index) => {
-        gsap.from(element, {
-            duration: 1,
-            opacity: 0,
-            x: 20,
-            ease: 'power2.out',
-            delay: index * 0.5,
-        });
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  animateContent();
 });

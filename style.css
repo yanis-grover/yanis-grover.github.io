@@ -1,65 +1,46 @@
-/* Global Styles */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #fff;
+    margin: 0;
+    padding: 0;
     background-color: #0a0a0a;
-}
-
-a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: #ccc;
-}
-
-/* Navigation Styles */
-
-nav {
-    padding: 20px 0;
-    text-align: center;
+    color: #ffffff;
+    text-align: left;
 }
 
 nav ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav li {
-    display: inline-block;
-    margin-right: 20px;
+    margin: 20px;
 }
 
 nav a {
-    font-size: 18px;
-    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-/* Main Content Styles */
+nav a:hover {
+    color: #cccccc;
+}
 
 main {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 40px auto;
-    padding: 20px;
 }
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 }
 
 h1, h2 {
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-top: 0;
 }
 
 h1 {
@@ -68,16 +49,28 @@ h1 {
 
 h2 {
     font-size: 24px;
-}
-
-p {
     margin-bottom: 20px;
 }
 
-/* Get in Touch Styles */
+p {
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 600px;
+}
+
+#about p:first-of-type {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#get-in-touch {
+    margin-top: 40px;
+}
 
 #get-in-touch ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #get-in-touch li {
@@ -85,13 +78,17 @@ p {
 }
 
 #get-in-touch a {
-    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-/* Particles Styles */
+#get-in-touch a:hover {
+    color: #cccccc;
+}
 
 #particles-js {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;

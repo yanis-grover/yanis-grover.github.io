@@ -5,46 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanu Grover</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 </head>
 <body>
-    <div class="particles-js"></div>
-    <nav>
-        <ul class="nav-links">
+    <div class="particles-js-container">
+        <div id="particles-js"></div>
+    </div>
+    <nav class="nav-bar">
+        <ul>
             <li><a href="index.html">About Me</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#tech-experience">Technical Experience</a></li>
-            <li><a href="#teaching-experience">Teaching Experience</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Technical Experience</a></li>
+            <li><a href="#">Teaching Experience</a></li>
         </ul>
     </nav>
     <main>
-        <div class="header-area">
+        <section class="header-area">
             <img class="profile-pic" src="imgs/profile_pic.jpg" alt="Kanu Grover Profile Picture">
             <h1>Kanu Grover</h1>
-            <p>M.S. in Computer Science - Machine Learning Concentration Student at Stanford University</p>
-        </div>
-        <section>
-            <h2>About Me</h2>
-            <p>Kanu Grover is a Machine Learning-focused M.S. student at Stanford University with technical expertise in data science, software engineering, and teaching experience, driving data-driven solutions through hands-on experience at top tech companies like Figma, Crowdstrike, and Zebra Technologies.</p>
+            <p>M.S. in Computer Science Student at Stanford University</p>
         </section>
-        <section>
+        <section class="about-me-section">
+            <h2>About Me</h2>
+            <p>Data Science and Machine Learning expert with a strong academic background in Computer Science and experience in leading roles at top tech companies, with expertise in natural language processing, graph machine learning, and experimentation and causal inference.</p>
+        </section>
+        <section class="contact-section">
             <h2>Get in Touch</h2>
-            <div class="contact-info">
-                <label>Email:</label>
-                <p>your-email@example.com</p>
-            </div>
-            <div class="contact-info">
-                <label>Phone Number:</label>
-                <p>123-456-7890</p>
-            </div>
-            <div class="contact-info">
-                <label>LinkedIn:</label>
-                <p><a href="https://www.linkedin.com/in/your-linkedin-profile">Your LinkedIn Profile</a></p>
-            </div>
+            <ul>
+                <li>Email: <a href="mailto:example@email.com">example@email.com</a></li>
+                <!-- Add other contact methods here -->
+            </ul>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

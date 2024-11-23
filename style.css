@@ -1,75 +1,95 @@
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    line-height: 1.6;
+    color: #fff;
     background-color: #0a0a0a;
-    color: #ffffff;
-    text-align: left;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-nav li {
-    margin: 20px;
-}
-
-nav a {
-    color: #ffffff;
+a {
     text-decoration: none;
+    color: #fff;
     transition: color 0.2s ease;
 }
 
-nav a:hover {
-    color: #cccccc;
+a:hover {
+    color: #ccc;
 }
 
-main {
-    max-width: 1200px;
-    margin: 40px auto;
+/* Navigation Styles */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
 }
 
-section {
-    margin-bottom: 80px;
+nav li {
+    margin-right: 20px;
 }
 
-h1, h2 {
-    font-weight: bold;
-    margin-top: 0;
+nav a {
+    font-size: 1.2em;
 }
 
-h1 {
-    font-size: 36px;
-}
+/* Profile Styles */
 
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 28px;
+.profile {
     max-width: 600px;
+    margin: 40px auto;
+    text-align: left;
 }
 
-#about p:first-of-type {
-    font-size: 20px;
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+}
+
+.profile h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.role {
+    font-size: 1.2em;
+    color: #ccc;
     margin-bottom: 20px;
 }
+
+.bio {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+/* Get in Touch Styles */
 
 #get-in-touch {
-    margin-top: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+#get-in-touch h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 #get-in-touch ul {
     list-style: none;
-    margin: 0;
     padding: 0;
 }
 
@@ -78,14 +98,10 @@ p {
 }
 
 #get-in-touch a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.2s ease;
+    font-size: 1.1em;
 }
 
-#get-in-touch a:hover {
-    color: #cccccc;
-}
+/* Particles Background */
 
 #particles-js {
     position: absolute;

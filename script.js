@@ -126,7 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fade in all elements simultaneously
     timeline.from(mainContentElements, {
-        opacity: 0
+        opacity: 0,
+        stagger: 0 // Removed stagger to fade in all elements simultaneously
     });
 
     mainContentElements.forEach((element, index) => {

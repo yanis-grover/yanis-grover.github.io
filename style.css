@@ -1,138 +1,132 @@
 /* Global Styles */
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #ffffff;
-  background-color: #0a0a0a;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: #0a0a0a;
+    background-image: url('https://cdn.jsdelivr.net/npm/particles.js@2.0.0/demo/assets/galaxy.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 a {
-  text-decoration: none;
-  color: #ffffff;
-  transition: color 0.2s ease;
+    text-decoration: none;
+    color: #a6d4ff;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #cccccc;
+    color: #ffffff;
+}
+
+nav {
+    padding: 1rem;
+    text-align: center;
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
 }
 
 nav a {
-  margin-right: 20px;
-}
-
-nav a.active {
-  font-weight: bold;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 main {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
 }
 
-main h1 {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 10px;
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-main h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-main p {
-  margin-bottom: 20px;
-}
-
-main ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-main li {
-  margin-bottom: 10px;
-}
-
-main a {
-  display: block;
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 /* Profile Picture Styles */
 
-.profile {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
+.profile-pic-container {
+    position: relative;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile-pic {
-  max-width: 200px;
-  max-height: 200px;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 3px solid #ffffff;
-  object-fit: cover;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin: 0 20px 20px 0;
+    max-width: 200px;
+    max-height: 200px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    object-fit: cover;
 }
 
-.profile-pic + * {
-  flex: 1;
+/* Responsive Profile Picture Styles */
+
+@media (max-width: 768px) {
+    .profile-pic {
+        max-width: 150px;
+        max-height: 150px;
+    }
 }
 
-/* Responsive Design */
+/* Contact Section Styles */
 
-@media only screen and (max-width: 768px) {
-  .profile-pic {
-    max-width: 150px;
-    max-height: 150px;
-  }
+#contact {
+    margin-top: 40px;
 }
 
-@media only screen and (max-width: 480px) {
-  main {
-    padding: 10px;
-  }
-  
-  .profile {
-    flex-direction: column;
-  }
-  
-  .profile-pic {
-    margin: 0 auto 20px;
-  }
+#contact ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-/* Particles Background */
+#contact li {
+    margin-bottom: 10px;
+}
+
+#contact a {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Particles Styles */
 
 #particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }

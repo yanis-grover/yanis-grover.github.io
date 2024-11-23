@@ -136,14 +136,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fade-in Animations
     const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach((element) => {
-        gsap.from(element, {
+    gsap.timeline({
+        defaults: {
             duration: 1,
             opacity: 0,
-            delay: 0.5,
-            ease: 'power2.inOut',
-            stagger: 0.2
-        });
+            ease: 'power2.inOut'
+        }
+    }).from(fadeElements, {
+        stagger: 0.2
     });
 
     // Error Handling

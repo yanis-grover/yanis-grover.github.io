@@ -1,161 +1,73 @@
-// Initialize after DOM content loaded
+// Initialize particles.js after DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize particles.js with an elegant dark theme
-    particlesJS('particles-js', {
-        particles: {
-            number: {
-                value: 100,
-                density: {
-                    enable: true,
-                    value_area: 800
-                }
-            },
-            color: {
-                value: '#ffffff'
-            },
-            shape: {
-                type: 'circle',
-                stroke: {
-                    width: 0,
-                    color: '#000000'
-                },
-                polygon: {
-                    nb_sides: 5
-                },
-                image: {
-                    src: 'img/github.svg',
-                    width: 100,
-                    height: 100
-                }
-            },
-            opacity: {
-                value: 0.5,
-                random: false,
-                anim: {
-                    enable: true,
-                    speed: 1,
-                    opacity_min: 0.1,
-                    sync: false
-                }
-            },
-            size: {
-                value: 3,
-                random: true,
-                anim: {
-                    enable: true,
-                    speed: 2,
-                    size_min: 0.1,
-                    sync: false
-                }
-            },
-            line_linked: {
-                enable: true,
-                distance: 150,
-                color: '#ffffff',
-                opacity: 0.4,
-                width: 1
-            },
-            move: {
-                enable: true,
-                speed: 1,
-                direction: 'none',
-                random: false,
-                straight: false,
-                out_mode: 'out',
-                bounce: false,
-                attract: {
-                    enable: false,
-                    rotateX: 600,
-                    rotateY: 1200
-                }
-            }
-        },
-        interactivity: {
-            detect_on: 'canvas',
-            events: {
-                onhover: {
-                    enable: true,
-                    mode: 'grab'
-                },
-                onclick: {
-                    enable: true,
-                    mode: 'push'
-                },
-                resize: true
-            },
-            modes: {
-                grab: {
-                    distance: 140,
-                    line_linked: {
-                        opacity: 1
-                    }
-                },
-                bubble: {
-                    distance: 400,
-                    size: 40,
-                    duration: 2,
-                    opacity: 8,
-                    speed: 3
-                },
-                repulse: {
-                    distance: 200,
-                    duration: 0.4
-                },
-                push: {
-                    particles_nb: 4
-                },
-                remove: {
-                    particles_nb: 2
-                }
-            }
-        },
-        retina_detect: true
+  // Particles.js initialization with elegant dark theme
+  particlesJS.load('particles-js', 'particles.json', function() {
+    console.log('particles.js loaded - callback');
+  });
+
+  // Check if main content elements exist before animating
+  const mainContentElements = document.querySelectorAll('.text-content > *');
+  if (mainContentElements.length === 0) {
+    console.warn('Missing main content elements for animation');
+    return;
+  }
+
+  // GSAP animation setup
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Create sequential fade-in animations for all main content elements
+  mainContentElements.forEach((element, index) => {
+    gsap.from(element, {
+      duration: 1,
+      delay: index * 0.5,
+      y: 20,
+      autoAlpha: 0,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        toggleActions: 'play none none reset'
+      }
     });
+  });
 
-    // Check if elements exist before animating
-    const elements = ['h1', 'h2', '.professional-subtitle', 'p', '.profile-pic-container'];
-    const textContent = document.querySelector('.text-content');
-    const profilePicContainer = document.querySelector('.profile-pic-container');
-
-    if (!textContent) {
-        console.warn('Missing text content element');
-        return;
-    }
-
-    elements.forEach((element, index) => {
-        const elem = textContent.querySelector(element);
-        if (!elem) {
-            console.warn(`Missing element: ${element}`);
-            return;
-        }
-
-        // Create sequential fade-in animations for all main content elements
-        gsap.from(elem, {
-            duration: 1,
-            opacity: 0,
-            y: 20,
-            ease: 'power2.out',
-            delay: index * 0.5,
-            onComplete: () => {
-                // Ensure elements don't disappear after animation
-                elem.style.opacity = 1;
-                elem.style.transform = 'none';
-            }
-        });
+  // Check if profile picture element exists before animating
+  const profilePicture = document.querySelector('.profile-pic-container img');
+  if (profilePicture) {
+    // GSAP animation for profile picture
+    gsap.from(profilePicture, {
+      duration: 1,
+      delay: mainContentElements.length * 0.5,
+      scale: 0.5,
+      autoAlpha: 0,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: profilePicture,
+        start: 'top 80%',
+        toggleActions: 'play none none reset'
+      }
     });
+  } else {
+    console.warn('Missing profile picture element for animation');
+  }
 
-    // Animate profile picture container
-    if (profilePicContainer) {
-        gsap.from(profilePicContainer, {
-            duration: 1,
-            opacity: 0,
-            scale: 0.5,
-            ease: 'power2.out',
-            delay: elements.length * 0.5,
-            onComplete: () => {
-                profilePicContainer.style.opacity = 1;
-                profilePicContainer.style.transform = 'none';
-            }
-        });
-    }
+  // Initialize particles.js with an elegant dark theme
+  particlesJS.particles.number.value = 80;
+  particlesJS.particles.color.value = '#ffffff';
+  particlesJS.particles.shape.type = 'circle';
+  particlesJS.particles.size.value = 4;
+  particlesJS.particles.size.random = true;
+  particlesJS.particles.size.anim.speed = 2;
+  particlesJS.particles.size.anim.sync = true;
+  particlesJS.particles.line_linked.color = '#ffffff';
+  particlesJS.particles.line_linked.width = 1;
+  particlesJS.particles.line_linked.opacity = 0.5;
+  particlesJS.particles.move.speed = 2;
+  particlesJS.particles.move.direction = 'none';
+  particlesJS.particles.move.random = true;
+  particlesJS.particles.move.straight = false;
+  particlesJS.particles.move.out_mode = 'out';
+  particlesJS.interactivity.events.onhover.mode = 'grab';
+  particlesJS.interactivity.events.onhover.speed = 5;
+  particlesJS.interactivity.events.resize = true;
 });

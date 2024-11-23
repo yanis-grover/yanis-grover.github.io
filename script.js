@@ -121,16 +121,20 @@ document.addEventListener('DOMContentLoaded', () => {
         defaults: {
             duration: 1,
             ease: 'power2.inOut',
-            stagger: 0.2
         }
+    });
+
+    // Fade in all elements simultaneously
+    timeline.from(mainContentElements, {
+        opacity: 0
     });
 
     mainContentElements.forEach((element, index) => {
         if (element.tagName !== 'MAIN') {
             timeline.from(element, {
                 y: 20,
-                opacity: 0
-            });
+                stagger: 0.2
+            }, '<');
         }
     });
 

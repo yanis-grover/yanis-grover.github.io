@@ -1,73 +1,120 @@
-// Initialize particles.js after DOM content loaded
+// Initialize after DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
-  // Particles.js initialization with elegant dark theme
-  particlesJS.load('particles-js', 'particles.json', function() {
-    console.log('particles.js loaded - callback');
-  });
-
-  // Check if main content elements exist before animating
-  const mainContentElements = document.querySelectorAll('.text-content > *');
-  if (mainContentElements.length === 0) {
-    console.warn('Missing main content elements for animation');
-    return;
-  }
-
-  // GSAP animation setup
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Create sequential fade-in animations for all main content elements
-  mainContentElements.forEach((element, index) => {
-    gsap.from(element, {
-      duration: 1,
-      delay: index * 0.5,
-      y: 20,
-      autoAlpha: 0,
-      ease: 'power2.inOut',
-      scrollTrigger: {
-        trigger: element,
-        start: 'top 80%',
-        toggleActions: 'play none none reset'
-      }
+    // Particles Background
+    particlesJS('particles-js', {
+        "particles": {
+            "number": {
+                "value": 30,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#cccccc"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": false,
+                "distance": 150,
+                "color": "#cccccc",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 1,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "events": {
+                "onhover": {
+                    "enable": false,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": false,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                }
+            }
+        },
+        "retina_detect": true
+    }, function() {
+        console.log('particles.js loaded');
     });
-  });
 
-  // Check if profile picture element exists before animating
-  const profilePicture = document.querySelector('.profile-pic-container img');
-  if (profilePicture) {
-    // GSAP animation for profile picture
-    gsap.from(profilePicture, {
-      duration: 1,
-      delay: mainContentElements.length * 0.5,
-      scale: 0.5,
-      autoAlpha: 0,
-      ease: 'power2.inOut',
-      scrollTrigger: {
-        trigger: profilePicture,
-        start: 'top 80%',
-        toggleActions: 'play none none reset'
-      }
-    });
-  } else {
-    console.warn('Missing profile picture element for animation');
-  }
+    try {
+        // Text Animations
+        const contentElements = document.querySelectorAll('.text-content h1, .text-content h2, .text-content p, .text-content section');
+        const tl = gsap.timeline();
 
-  // Initialize particles.js with an elegant dark theme
-  particlesJS.particles.number.value = 80;
-  particlesJS.particles.color.value = '#ffffff';
-  particlesJS.particles.shape.type = 'circle';
-  particlesJS.particles.size.value = 4;
-  particlesJS.particles.size.random = true;
-  particlesJS.particles.size.anim.speed = 2;
-  particlesJS.particles.size.anim.sync = true;
-  particlesJS.particles.line_linked.color = '#ffffff';
-  particlesJS.particles.line_linked.width = 1;
-  particlesJS.particles.line_linked.opacity = 0.5;
-  particlesJS.particles.move.speed = 2;
-  particlesJS.particles.move.direction = 'none';
-  particlesJS.particles.move.random = true;
-  particlesJS.particles.move.straight = false;
-  particlesJS.particles.move.out_mode = 'out';
-  particlesJS.interactivity.events.onhover.mode = 'grab';
-  particlesJS.interactivity.events.onhover.speed = 5;
-  particlesJS.interactivity.events.resize = true;
+        contentElements.forEach((element, index) => {
+            if (element) {
+                tl.from(element, {
+                    duration: 0.8,
+                    y: 20,
+                    opacity: 0,
+                    ease: 'power2.inOut',
+                    delay: index * 0.2
+                });
+            } else {
+                console.warn(`Element at index ${index} not found.`);
+            }
+        });
+    } catch (error) {
+        console.error('Error initializing text animations:', error);
+    }
 });

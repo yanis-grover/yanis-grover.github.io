@@ -1,117 +1,152 @@
 /* Global Styles */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #ffffff;
-    background-color: #000000;
-}
-
-h1, h2 {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-h1 {
-    font-size: 36px;
-}
-
-h2 {
-    font-size: 24px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #000000;
 }
 
 a {
-    text-decoration: none;
-    color: #cccccc;
-    transition: color 0.2s ease;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #ffffff;
+  color: #cccccc;
 }
 
-/* Navigation Bar */
+/* Navigation Styles */
 
-.nav-bar ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+nav {
+  background-color: #000000;
+  padding: 1em;
+  text-align: center;
 }
 
-.nav-bar li {
-    margin-right: 20px;
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
-.nav-bar a {
-    font-size: 18px;
+nav li {
+  margin-right: 20px;
 }
 
-/* Header Area */
+nav a {
+  color: #ffffff;
+}
 
-.header-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
+/* Main Content Styles */
+
+main {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.role {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Profile Picture Styles */
+
+.profile-pic-container {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: top;
 }
 
 .profile-pic {
-    max-width: 200px;
-    max-height: 200px;
-    border-radius: 50%;
-    border: 3px solid #ffffff;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-}
-
-/* About Me Section */
-
-.about-me-section {
-    max-width: 600px;
-    margin: 50px auto;
-    text-align: center;
-}
-
-/* Contact Section */
-
-.contact-section {
-    max-width: 600px;
-    margin: 50px auto;
-    text-align: center;
-}
-
-.contact-section ul {
-    list-style: none;
-}
-
-.contact-section li {
-    margin-bottom: 10px;
-}
-
-.contact-section a {
-    font-size: 18px;
+  max-width: 200px;
+  max-height: 200px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
 
-@media only screen and (max-width: 768px) {
-    .profile-pic {
-        max-width: 150px;
-        max-height: 150px;
-    }
-    .header-area {
-        margin-top: 30px;
-    }
-    .about-me-section, .contact-section {
-        margin: 30px auto;
-    }
+@media (max-width: 768px) {
+  main {
+    margin: 20px auto;
+  }
+
+  .profile-pic {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    margin: 10px auto;
+  }
+
+  .profile-pic {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+
+/* Particles Background */
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Contact Links Styles */
+
+#get-in-touch ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#get-in-touch li {
+  margin-bottom: 10px;
+}
+
+#get-in-touch a {
+  font-size: 18px;
+  font-weight: bold;
 }

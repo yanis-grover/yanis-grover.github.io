@@ -117,25 +117,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Text Animations
     const mainContentElements = document.querySelectorAll('main *');
-    const timeline = gsap.timeline({
+    const tl = gsap.timeline({
         defaults: {
             duration: 1,
             ease: 'power2.inOut',
+            stagger: 0.2
         }
     });
 
-    // Fade in all elements simultaneously
-    timeline.from(mainContentElements, {
-        opacity: 0,
-        stagger: 0 // Removed stagger to fade in all elements simultaneously
-    });
-
-    mainContentElements.forEach((element, index) => {
+    mainContentElements.forEach((element) => {
         if (element.tagName !== 'MAIN') {
-            timeline.from(element, {
+            tl.from(element, {
                 y: 20,
-                stagger: 0.2
-            }, '<');
+                opacity: 0
+            });
         }
     });
 

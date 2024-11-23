@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Text Animations
     const mainContentElements = document.querySelectorAll('main *');
-    const tl = gsap.timeline({
+    const timeline = gsap.timeline({
         defaults: {
             duration: 1,
             ease: 'power2.inOut',
@@ -125,32 +125,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    mainContentElements.forEach((element) => {
+    mainContentElements.forEach((element, index) => {
         if (element.tagName !== 'MAIN') {
-            tl.from(element, {
+            timeline.from(element, {
                 y: 20,
                 opacity: 0
             });
         }
     });
 
-    // Fade-in Animations
-    const fadeElements = document.querySelectorAll('.fade-in');
-    gsap.timeline({
-        defaults: {
-            duration: 1,
-            opacity: 0,
-            ease: 'power2.inOut'
-        }
-    }).from(fadeElements, {
-        stagger: 0.2
-    });
-
     // Error Handling
     if (!mainContentElements.length) {
         console.warn('No main content elements found');
-    }
-    if (!fadeElements.length) {
-        console.warn('No fade-in elements found');
     }
 });

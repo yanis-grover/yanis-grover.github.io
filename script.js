@@ -1,59 +1,141 @@
-// Initialize after DOM content loaded
+// Wait for DOM content to load
 document.addEventListener('DOMContentLoaded', () => {
-  // Particles Background
+  // Initialize particles.js with an elegant dark theme
   particlesJS.load('particles-js', 'particles.json', function() {
     console.log('particles.json loaded');
   });
 
-  // Fallback for particles.json not found
-  particlesJS.load('particles-js', 'particles.json', function() {
-    console.log('particles.json loaded');
-  }, function() {
-    console.error('particles.json not found');
-  });
+  // Create particles.json configuration file content
+  // You can customize this to your liking
+  // Make sure to create a particles.json file in the same directory as your HTML file
+  // and paste the following content into it
+  // {
+  //   "particles": {
+  //     "number": {
+  //       "value": 80,
+  //       "density": {
+  //         "enable": true,
+  //         "value_area": 800
+  //       }
+  //     },
+  //     "color": {
+  //       "value": "#ffffff"
+  //     },
+  //     "shape": {
+  //       "type": "circle",
+  //       "stroke": {
+  //         "width": 0,
+  //         "color": "#000000"
+  //       },
+  //       "polygon": {
+  //         "nb_sides": 5
+  //       },
+  //       "image": {
+  //         "src": "img/github.svg",
+  //         "width": 100,
+  //         "height": 100
+  //       }
+  //     },
+  //     "opacity": {
+  //       "value": 0.5,
+  //       "random": false,
+  //       "anim": {
+  //         "enable": false,
+  //         "speed": 1,
+  //         "opacity_min": 0.1,
+  //         "sync": false
+  //       }
+  //     },
+  //     "size": {
+  //       "value": 3,
+  //       "random": true,
+  //       "anim": {
+  //         "enable": false,
+  //         "speed": 40,
+  //         "size_min": 0.1,
+  //         "sync": false
+  //       }
+  //     },
+  //     "line_linked": {
+  //       "enable": true,
+  //       "distance": 150,
+  //       "color": "#ffffff",
+  //       "opacity": 0.4,
+  //       "width": 1
+  //     },
+  //     "move": {
+  //       "enable": true,
+  //       "speed": 2,
+  //       "direction": "none",
+  //       "random": false,
+  //       "straight": false,
+  //       "out_mode": "out",
+  //       "bounce": false,
+  //       "attract": {
+  //         "enable": false,
+  //         "rotateX": 600,
+  //         "rotateY": 1200
+  //       }
+  //     }
+  //   },
+  //   "interactivity": {
+  //     "detect_on": "canvas",
+  //     "events": {
+  //       "onhover": {
+  //         "enable": true,
+  //         "mode": "repulse"
+  //       },
+  //       "onclick": {
+  //         "enable": true,
+  //         "mode": "push"
+  //       },
+  //       "resize": true
+  //     },
+  //     "modes": {
+  //       "grab": {
+  //         "distance": 400,
+  //         "line_linked": {
+  //           "opacity": 1
+  //         }
+  //       },
+  //       "bubble": {
+  //         "distance": 400,
+  //         "size": 40,
+  //         "duration": 2,
+  //         "opacity": 8,
+  //         "speed": 3
+  //       },
+  //       "repulse": {
+  //         "distance": 200,
+  //         "duration": 0.4
+  //       },
+  //       "push": {
+  //         "particles_nb": 4
+  //       },
+  //       "remove": {
+  //         "particles_nb": 2
+  //       }
+  //     }
+  //   },
+  //   "retina_detect": true
+  // }
 
-  // Text Animations using GSAP
-  const tl = gsap.timeline({ defaults: { duration: 0.5, ease: 'power2.inOut' } });
+  // Use GSAP for animations
+  gsap.registerPlugin(ScrollTrigger);
 
-  // Check if elements exist before animating
-  const profilePic = document.querySelector('.profile-pic');
-  const mainHeading = document.querySelector('main h1');
-  const mainParagraphs = document.querySelectorAll('main p');
-  const getInTouchHeading = document.querySelector('#get-in-touch h2');
-  const getInTouchListItems = document.querySelectorAll('#get-in-touch ul li');
-
-  // Add animations to timeline
-  if (profilePic) {
-    tl.from(profilePic, { y: 20, opacity: 0 });
-  } else {
-    console.warn('Profile picture element not found');
-  }
-
-  if (mainHeading) {
-    tl.from(mainHeading, { y: 20, opacity: 0 }, '<');
-  } else {
-    console.warn('Main heading element not found');
-  }
-
-  mainParagraphs.forEach((paragraph, index) => {
-    if (paragraph) {
-      tl.from(paragraph, { y: 20, opacity: 0 }, `<${index * 0.1}`);
+  // Create sequential fade-in animations for all main content elements
+  const elements = document.querySelectorAll('.profile h1, .profile .role, .profile .bio, .get-in-touch h2, .get-in-touch ul');
+  elements.forEach((element, index) => {
+    if (element) {
+      gsap.from(element, {
+        y: 20,
+        opacity: 0,
+        duration: 0.5,
+        delay: index * 0.2,
+        ease: 'power2.out',
+      });
     } else {
-      console.warn(`Main paragraph ${index + 1} element not found`);
-    }
-  });
-
-  if (getInTouchHeading) {
-    tl.from(getInTouchHeading, { y: 20, opacity: 0 }, '<');
-  } else {
-    console.warn('Get in touch heading element not found');
-  }
-
-  getInTouchListItems.forEach((listItem, index) => {
-    if (listItem) {
-      tl.from(listItem, { y: 20, opacity: 0 }, `<${index * 0.1}`);
-    } else {
-      console.warn(`Get in touch list item ${index + 1} element not found`);
+      console.warn(`Missing element: ${index}`);
     }
   });
 });

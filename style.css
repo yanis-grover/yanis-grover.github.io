@@ -1,9 +1,8 @@
 /* Global Styles */
-
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -12,32 +11,32 @@ body {
   line-height: 1.5;
   color: #ffffff;
   background-color: #0a0a0a;
-  text-align: left;
+  background-image: none; /* Ensure particles.js background is visible */
 }
 
-a {
-  text-decoration: none;
-  color: #66ccff;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: #ffffff;
+header {
+  background-color: transparent;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  padding: 1em;
-}
-
-nav li {
-  margin-right: 20px;
+  padding: 20px;
 }
 
 nav a {
-  font-size: 18px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #cccccc;
+}
+
+nav a.active {
+  font-weight: bold;
 }
 
 main {
@@ -52,11 +51,33 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 24px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.role {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Profile Picture Styles */
+.profile-pic {
+  max-width: 200px;
+  max-height: 200px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile {
@@ -64,32 +85,26 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
 }
 
 .profile-pic {
-  max-width: 200px;
-  max-height: 200px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #ffffff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin: 20px;
-}
-
-.role {
-  font-size: 18px;
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-.bio {
-  font-size: 18px;
+  margin-left: 20px;
   margin-bottom: 20px;
 }
 
+.profile > * {
+  flex-basis: 100%;
+}
+
+/* Responsive Profile Picture */
+@media (max-width: 768px) {
+  .profile-pic {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+/* Get in Touch Styles */
 .get-in-touch {
   margin-top: 40px;
 }
@@ -105,35 +120,24 @@ h2 {
 }
 
 .get-in-touch a {
-  font-size: 18px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.2s ease;
 }
 
+.get-in-touch a:hover {
+  color: #cccccc;
+}
+
+/* Particles.js Styles */
 #particles-js {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   z-index: -1;
-}
-
-/* Responsive Design */
-
-@media (max-width: 768px) {
-  .profile-pic {
-    max-width: 150px;
-    max-height: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  main {
-    padding: 10px;
-  }
-  .profile {
-    flex-direction: column;
-  }
-  .profile-pic {
-    margin: 10px auto;
-  }
 }

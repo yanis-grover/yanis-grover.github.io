@@ -12,6 +12,14 @@ body {
     line-height: 1.5;
     color: #ffffff;
     background-color: #000000;
+    background-image: linear-gradient(to bottom, #000000, #333333);
+    background-attachment: fixed;
+    transition: background-color 0.5s ease;
+}
+
+body.dark-mode {
+    background-color: #333333;
+    background-image: linear-gradient(to bottom, #333333, #444444);
 }
 
 a {
@@ -30,6 +38,8 @@ nav {
     background-color: #333333;
     padding: 1em;
     text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s;
 }
 
 nav ul {
@@ -66,6 +76,7 @@ nav a {
     border: 3px solid #ffffff;
     object-fit: cover;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s;
 }
 
 /* Main Content Styles */
@@ -75,17 +86,23 @@ main {
     margin: 40px auto;
     padding: 20px;
     text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s;
 }
 
 h1 {
     font-size: 36px;
     margin-bottom: 10px;
+    animation: fadeIn 1s;
 }
 
 .role {
     font-size: 18px;
     color: #cccccc;
     margin-bottom: 20px;
+    animation: fadeIn 1s;
 }
 
 section {
@@ -95,10 +112,12 @@ section {
 h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    animation: fadeIn 1s;
 }
 
 p {
     margin-bottom: 20px;
+    animation: fadeIn 1s;
 }
 
 /* Responsive Design */
@@ -134,4 +153,15 @@ p {
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

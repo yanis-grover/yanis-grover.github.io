@@ -1,36 +1,9 @@
-/* Global Styles */
-
-* {
-    box-sizing: border-box;
+/* Add CSS styles here, for example: */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #ffffff;
-    background-color: #000000;
-}
-
-a {
-    text-decoration: none;
-    color: #ffffff;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: #cccccc;
-}
-
-/* Navigation Styles */
-
-nav {
-    background-color: #333333;
-    padding: 1em;
-    text-align: center;
-}
-
 nav ul {
     list-style: none;
     margin: 0;
@@ -38,91 +11,30 @@ nav ul {
     display: flex;
     justify-content: space-between;
 }
-
-nav li {
+nav ul li {
     margin-right: 20px;
 }
-
 nav a {
-    color: #ffffff;
+    text-decoration: none;
+    color: #337ab7;
 }
-
-/* Main Content Styles */
-
+.profile-pic-container {
+    text-align: center;
+}
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 main {
-    max-width: 600px;
+    max-width: 800px;
     margin: 40px auto;
     padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-h1, h2 {
-    margin-bottom: 10px;
-}
-
-h1 {
-    font-size: 36px;
-}
-
-h2 {
-    font-size: 24px;
-}
-
-p {
+section {
     margin-bottom: 20px;
-}
-
-.role {
-    font-size: 18px;
-    color: #cccccc;
-}
-
-/* Profile Picture Styles */
-
-.profile-pic-container {
-    position: relative;
-    display: inline-block;
-    margin-left: 20px;
-    vertical-align: top;
-}
-
-.profile-pic {
-    max-width: 200px;
-    max-height: 200px;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 3px solid #ffffff;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Design */
-
-@media (max-width: 768px) {
-    .profile-pic {
-        max-width: 150px;
-        max-height: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    .profile-pic {
-        max-width: 100px;
-        max-height: 100px;
-    }
-    main {
-        margin: 20px auto;
-        padding: 10px;
-    }
-}
-
-/* Particles Background */
-
-#particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
 }

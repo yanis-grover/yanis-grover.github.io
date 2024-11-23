@@ -1,168 +1,152 @@
 /* Global Styles */
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #ffffff;
-  background-color: #0a0a0a;
-}
-
-a {
-  text-decoration: none;
-  color: #ffffff;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: #cccccc;
-}
-
-ul {
-  list-style: none;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #0a0a0a;
+    line-height: 1.5;
+    overflow-x: hidden;
 }
 
 /* Navigation Styles */
 
-nav {
-  background-color: #0a0a0a;
-  padding: 1em;
-  text-align: center;
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: #0a0a0a;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 
-nav ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.nav-bar ul li {
+    margin-right: 20px;
 }
 
-nav li {
-  margin-right: 20px;
+.nav-bar a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.2s ease-in-out;
 }
 
-nav a {
-  font-weight: bold;
-  font-size: 18px;
+.nav-bar a:hover {
+    color: #cccccc;
+}
+
+.nav-bar .active {
+    color: #cccccc;
 }
 
 /* Content Styles */
 
 .content-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 800px;
-  margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    padding: 2em;
+    margin: 0 auto;
+    margin-top: 60px; /* adjust based on nav bar height */
 }
 
 .text-content {
-  max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
 }
 
-.text-content h1 {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.text-content h1, .text-content h2 {
+    margin-bottom: 10px;
 }
 
 .text-content p {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
+    max-width: 600px;
 }
 
-.role {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.text-content section {
-  margin-bottom: 40px;
-}
-
-.text-content section h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.text-content ul {
-  list-style: disc;
-  margin-left: 20px;
-}
-
-.text-content li {
-  margin-bottom: 10px;
-}
-
-.text-content a {
-  font-weight: bold;
+section {
+    margin-bottom: 40px;
 }
 
 /* Profile Picture Styles */
 
 .profile-pic-container {
-  margin-left: 40px;
-  text-align: center;
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 20px;
 }
 
 .profile-pic-container img {
-  max-width: 200px;
-  max-height: 200px;
-  border-radius: 50%;
-  border: 3px solid #ffffff;
-  object-fit: cover;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
+/* Responsive Styles */
 
 @media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
+    .content-wrapper {
+        flex-direction: column;
+        padding: 1em;
+    }
 
-  .text-content {
-    margin-bottom: 20px;
-  }
+    .text-content {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
-  .profile-pic-container {
-    margin-left: 0;
-  }
+    .profile-pic-container {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
 
-  .profile-pic-container img {
-    max-width: 150px;
-    max-height: 150px;
-  }
+    .profile-pic-container img {
+        max-width: 150px;
+        max-height: 150px;
+    }
 }
 
 @media (max-width: 480px) {
-  .text-content h1 {
-    font-size: 24px;
-  }
+    .nav-bar ul {
+        flex-direction: column;
+        padding: 0.5em;
+    }
 
-  .role {
-    font-size: 16px;
-  }
+    .nav-bar ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 
-  .text-content section h2 {
-    font-size: 18px;
-  }
+    .text-content p {
+        font-size: 14px;
+    }
+
+    .profile-pic-container img {
+        max-width: 100px;
+        max-height: 100px;
+    }
 }
 
-/* Particles.js Styles */
+/* Particles Background Styles */
 
 #particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }

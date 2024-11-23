@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "value": 0.5,
                 "random": false,
                 "anim": {
-                    "enable": false,
+                    "enable": true, // Changed from false to true
                     "speed": 1,
                     "opacity_min": 0.1
                 }
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "value": 3,
                 "random": true,
                 "anim": {
-                    "enable": false,
+                    "enable": true, // Changed from false to true
                     "speed": 40,
                     "size_min": 0.1
                 }
@@ -134,8 +134,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Add animation functionality to elements
+    const animatableElements = document.querySelectorAll('.animatable');
+    animatableElements.forEach((element) => {
+        element.addEventListener('mouseover', () => {
+            gsap.to(element, {
+                duration: 0.5,
+                scale: 1.1,
+                ease: 'power2.inOut'
+            });
+        });
+
+        element.addEventListener('mouseout', () => {
+            gsap.to(element, {
+                duration: 0.5,
+                scale: 1,
+                ease: 'power2.inOut'
+            });
+        });
+    });
+
     // Error Handling
     if (!mainContentElements.length) {
         console.warn('No main content elements found.');
+    }
+
+    if (!animatableElements.length) {
+        console.warn('No animatable elements found.');
     }
 });

@@ -48,7 +48,6 @@ main {
   object-fit: cover;
   float: right;
   margin-left: 20px;
-  margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -92,7 +91,7 @@ a:hover {
   z-index: -1;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   main {
     margin: 20px auto;
   }
@@ -100,7 +99,6 @@ a:hover {
     max-width: 150px;
     max-height: 150px;
     margin-left: 10px;
-    margin-bottom: 15px;
   }
   h1 {
     font-size: 24px;
@@ -113,7 +111,7 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
   main {
     margin: 10px auto;
   }
@@ -121,7 +119,6 @@ a:hover {
     max-width: 100px;
     max-height: 100px;
     margin-left: 5px;
-    margin-bottom: 10px;
   }
   h1 {
     font-size: 18px;

@@ -115,29 +115,15 @@ particlesJS('particles-js', {
 
 document.addEventListener('DOMContentLoaded', function() {
   var mainContent = document.querySelectorAll('main *');
-  if (mainContent.length === 0) {
-    console.warn('No main content elements found');
-    return;
-  }
-
-  var tl = gsap.timeline({
-    defaults: {
+  if (mainContent.length > 0) {
+    gsap.to(mainContent, {
       duration: 1,
+      opacity: 1,
+      y: 0,
+      stagger: 0.2,
       ease: 'power2.inOut'
-    }
-  });
-
-  mainContent.forEach(function(element, index) {
-    if (element.tagName === 'IMG') {
-      tl.from(element, {
-        y: 50,
-        autoAlpha: 0
-      }, index * 0.2);
-    } else {
-      tl.from(element, {
-        y: 20,
-        autoAlpha: 0
-      }, index * 0.2);
-    }
-  });
+    });
+  } else {
+    console.warn('No main content elements found.');
+  }
 });

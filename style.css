@@ -2,13 +2,13 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000;
-  color: #fff;
+  background-color: #f0f0f0;
+  color: #333;
   text-align: left;
 }
 
 nav {
-  background-color: #000;
+  background-color: #8b0a1a;
   padding: 1em;
   text-align: center;
 }
@@ -38,13 +38,16 @@ main {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .profile-pic {
   max-width: 200px;
   max-height: 200px;
   border-radius: 50%;
-  border: 3px solid #ffffff;
+  border: 3px solid #8b0a1a;
   object-fit: cover;
   float: right;
   margin-left: 20px;
@@ -58,6 +61,7 @@ h1, h2 {
 h1 {
   font-size: 36px;
   font-weight: bold;
+  color: #8b0a1a;
 }
 
 h2 {
@@ -73,13 +77,13 @@ p {
 }
 
 a {
-  color: #fff;
+  color: #8b0a1a;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #ccc;
+  color: #666;
 }
 
 #particles-js {
@@ -100,15 +104,6 @@ a:hover {
     max-height: 150px;
     margin-left: 10px;
   }
-  h1 {
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 18px;
-  }
-  p {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -119,14 +114,5 @@ a:hover {
     max-width: 100px;
     max-height: 100px;
     margin-left: 5px;
-  }
-  h1 {
-    font-size: 18px;
-  }
-  h2 {
-    font-size: 14px;
-  }
-  p {
-    font-size: 14px;
   }
 }
